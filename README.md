@@ -98,3 +98,18 @@ The simplified explanation of this issue is that a variable or function cannot b
     ```
 
 By extrapolating this use case into more complicated environments, implementing dependency handling solutions, such as RequireJS, may assist to track and handle dependency requirements.
+
+
+
+### 6.String replace
+
+The string replace function only replaces the first match, not all matches as you may expect.
+
+"bob".replace("b", "x"); // "xob"
+"bob".replace(/b/, "x"); // "xob" (regular expression version)
+To replace all matches, you must use a Regular Expression, and add the global modifier to it:
+
+"bob".replace(/b/g, "x"); // "xox"
+"bob".replace(new RegExp("b", "g"), "x"); // "xox" (alternate explicit RegExp)
+
+The global modifier ensures that the replacement does not stop after the first match.
