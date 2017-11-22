@@ -104,19 +104,18 @@ By extrapolating this use case into more complicated environments, implementing 
 ### 6.String replace
 
 The string replace function only replaces the first match, not all matches as you may expect.
-'''
-<script>
+'''js
 "bob".replace("b", "x"); // "xob"
 "bob".replace(/b/, "x"); // "xob" (regular expression version)
-    </script>
+   
 '''
 To replace all matches, you must use a Regular Expression, and add the global modifier to it:
 
-'''
-<script>
+'''js
+
 "bob".replace(/b/g, "x"); // "xox"
 "bob".replace(new RegExp("b", "g"), "x"); // "xox" (alternate explicit RegExp)
-    </script>
+    
 '''
 
 The global modifier ensures that the replacement does not stop after the first match.
